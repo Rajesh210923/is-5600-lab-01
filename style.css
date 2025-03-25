@@ -37,118 +37,106 @@ header {
    list-style-type: none;
  }
  
- nav a {
-   text-decoration: none; 
-   color: #000; /* Default link color */
- }
- 
- nav a:visited {
-   color: #555; /* Color for visited links */
- }
- 
- nav a:hover {
-   color: #ff6347; /* Color for hover state */
- }
  nav ul {
-   margin-left: 80px; 
+   margin-left: 80px;
  }
+ 
  nav a {
-   color: #51279b; /* Default link color */
-   text-decoration: none; /* Remove underline */
-   padding: 10px; /* Add some padding around the links */
-   font-weight: 600; /* Make the font bold */
+   color: #51279b;
+   text-decoration: none;
+   padding: 10px;
+   font-weight: 600;
  }
  
  nav a:visited {
-   color: #8662c7; /* Color for visited links */
+   color: #8662c7;
  }
  
  nav a:hover {
-   color: #8662c7; /* Color when hovered */
-   text-decoration: underline; /* Underline the link when hovered */
- }
- 
- nav a:active {
-   color: #51279b; /* Color when the link is active (clicked) */
+   color: #8662c7;
+   text-decoration: underline;
  }
  header div {
-   margin: 100px 0 0 80px; /* Adjust margin for vertical and horizontal alignment */
- }
- header div {
+  margin: 100px 0 0 80px;
+}
+header div {
    margin: 100px 0 0 80px;
-   color: white; /* Set white color for all text inside the div */
- }
- 
- header h2 {
-   font-size: 48px; /* Set font size for the header */
-   margin-bottom: 0.5rem; /* Add space below the h2 */
- }
- 
- header p {
-   font-size: 24px; /* Set font size for the paragraph */
-   margin-bottom: 1.5rem; /* JUST Add space below the paragraph */
- }
-/* WE Target the anchor tag within header div (to avoid affecting the navigation links) */
+   color: white; /* we can use the cascading nature of CSS to set the color for all the elements within the div */
+}
+header h2 {
+ font-size: 48px;
+ margin-bottom: 0.5rem;
+}
+header p {
+ font-size: 24px;
+ margin-bottom: 1.5rem;
+}
+/* We can to target header.div.a because if we taget simply a, then these styles will affect our navigation links as well */
 header div a {
-   background-color: #51279b; /* Purple background color */
-   color: white; /* White text color */
-   padding: 10px 20px; /* Add padding to the button */
-   text-decoration: none; /* Remove underline */
-   border-radius: 5px; /* Round the corners of the button */
+   background-color: #51279b;
+   color: white;
+   padding: 10px 20px;
+   text-decoration: none;
+   border-radius: 5px;
  }
  
  header div a:hover {
-   background-color: #8662c7; /* Change background color on hover */
+     background-color: #8662c7;
  }
 
-/* .card class styles for each card container */
+/* Note we can use the .card class selector here, as a class has been assigned to the <section> elements. */
 .card {
-   float: left; /* Float each card to the left */
-   display: inline-block; /* Make them inline-block elements */
-   width: calc(33% - 10px); /* Set width to 1/3 minus 10px for spacing */
-   margin: 10px 5px; /* Add margin around each card */
-   background-color: white; /* Set background color of each card */
+   float: left;
+   display: inline-block;
+   width: calc(33% - 10px);
+   margin: 10px 5px;
+   background-color: white;
  }
+ .card div {
+   padding: 20px 5px;
+}
 
- /* Style the content within each card */
-.card div {
-   padding: 20px 5px; /*I JUST  Add padding around the content */
- }
- 
- .card img {
-   width: 100%; /* Make image take full width of the card */
- }
- 
- .card div.description {
-   font-size: 12px; /* Set font size for the description */
- }
- 
- .card h3 {
-   font-size: 14px; /* Set font size for the card title */
- }
-/* Style the .social container for comments and favorites */
+.card img {
+   width: 100%;
+}
+
+.card div.description {
+   font-size: 12px;
+}
+
+.card h3 {
+   font-size: 14px;
+}
 .social {
-   margin-top: 1rem; /* Add margin to the top of the social section */
-   font-size: 12px; /* Set font size for the social icons */
+   margin-top: 1rem;
+   font-size: 12px;
  }
  
- /* Style each social icon */
  .social span {
-   background-size: contain; /* Ensure the background image is contained within the span */
-   background-repeat: no-repeat; /* Prevent the background image from repeating */
-   padding-left: 25px; /* Add padding to the left of the icon */
-   margin-right: 10px; /* Add space between icons */
+   background-size: contain;
+   background-repeat: no-repeat;
+   padding-left: 25px;
+   margin-right: 10px; /* we could use use 1em here, but 10px is a bit more precise */
  }
  
- /* Set background images for the heart and comment icons */
  .social .heart {
-   background-image: url(./images/heart.png); /* Path to heart icon */
+   background-image: url(./images/heart.png);
  }
  
  .social .comment {
-   background-image: url(./images/comment.png); /* Path to comment icon */
+   background-image: url(./images/comment.png);
+ }
+ main {
+   display: flex; /* Use flexbox to manage layout */
+   flex-wrap: wrap; /* Allow cards to wrap onto the next line if needed */
+   justify-content: flex-start; /* Align cards to the start (left) */
+   gap: 10px; /* This will control the spacing between cards */
+ }
+ .card {
+   flex: 1 1 calc(33% - 10px); /* The card will take up roughly 33% of the width minus the gap */
+   background-color: white; /* Keep the background color */
+   margin: 0; /* Remove any margin */
  }
   
- 
 
  
